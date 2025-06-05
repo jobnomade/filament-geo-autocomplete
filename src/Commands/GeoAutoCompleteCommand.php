@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Jobnomade\GeoAutoComplete\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GeoAutoCompleteCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-geo-autocomplete';
 
     public $description = 'My command';
 
