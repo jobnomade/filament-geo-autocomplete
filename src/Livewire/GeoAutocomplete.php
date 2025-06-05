@@ -7,13 +7,16 @@ use Livewire\Component;
 class GeoAutocomplete extends Component
 {
     public string $search = '';
+
     public array $suggestions = [];
+
     public array $selectedAddress = [];
 
     public function updatedSearch()
     {
         if (strlen($this->search) < 3) {
             $this->suggestions = [];
+
             return;
         }
 
@@ -25,7 +28,7 @@ class GeoAutocomplete extends Component
         $this->selectedAddress = $address;
         $this->search = $address['text'];
         $this->suggestions = [];
-        
+
         $this->dispatch('address-selected', $address);
     }
 
@@ -38,4 +41,4 @@ class GeoAutocomplete extends Component
     {
         return view('geo-autocomplete::livewire.geo-autocomplete');
     }
-} 
+}

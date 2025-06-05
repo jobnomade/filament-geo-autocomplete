@@ -9,8 +9,8 @@ use Geocoder\Query\GeocodeQuery;
 use Geocoder\StatefulGeocoder;
 use GuzzleHttp\Client;
 
-class GeoAutocomplete extends Field {
-
+class GeoAutocomplete extends Field
+{
     protected string $view = 'geo-autocomplete::components.geo-autocomplete';
 
     protected array $targetFields = [];
@@ -29,7 +29,7 @@ class GeoAutocomplete extends Field {
 
     public function getGeocoder(): StatefulGeocoder
     {
-        $httpClient = new Client();
+        $httpClient = new Client;
         $provider = new Mapbox($httpClient, config('geo-autocomplete.mapbox.access_token'));
 
         return new StatefulGeocoder($provider);
@@ -56,8 +56,7 @@ class GeoAutocomplete extends Field {
                     ],
                 ];
             })->toArray();
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return [];
         }
     }
